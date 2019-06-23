@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPink"
+    tools:context=".HomeActivity">
+
+
+    <Button
+        android:id="@+id/playGame"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="BEGIN"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/avatar"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Avatar"
+        android:layout_marginTop="300dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/myAccount"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Login"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <Button
+        android:id="@+id/volume"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Sound"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="110dp"
+        />
+
+    <Button
+        android:id="@+id/help"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Help"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="210dp"
+        />
+
+    <Button
+    android:id="@+id/LeaderBoard"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:text="Achievers"
+    android:layout_marginTop="500dp"
+    android:layout_marginLeft="310dp"
+    />
+
+
+</RelativeLayout>
