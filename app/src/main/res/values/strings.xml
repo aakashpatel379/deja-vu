@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Deja Vu</string>
+    <string name="leaderboard_name">Game Leaderboard</string>
 </resources>
