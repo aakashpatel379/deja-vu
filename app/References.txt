@@ -1,0 +1,4 @@
+Registration Activity ProgressBar
+https://sourcey.com/articles/beautiful-android-login-and-signup-screens-with-material-design
+Progress bar style
+https://github.com/sourcey/materiallogindemo/blob/master/app/src/main/res/values/styles.xml
