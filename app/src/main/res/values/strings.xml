@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">Deja Vu</string>
     <string name="leaderboard_name">Game Leaderboard</string>
+    <string name="google_status_fmt"></string>
+    <string name="firebase_status_fmt"></string>
+    <string name="help_text">
+        Hello (Hello) allow me to introduce myself (myself)\n
+        My name is Shaaady\n
+        So nice to meet you (So nice to meet you)\n
+        It\'s been a long time (long time) sorry I\'ve been away so long (So long)\n
+        My name is Shaaady\n
+        I never meant to leave you (Never meant to leave you)\n
+        Yea\n
+        Hello (Hello) allow me to introduce myself (myself)\n
+        My name is Shaaady\n
+        So nice to meet you (So nice to meet you)\n
+        It\'s been a long time (long time) sorry I\'ve been away so long (So long)\n
+        My name is Shaaady\n
+        I never meant to leave you (Never meant to leave you)\n
+        Yea\n
+</string>
 </resources>
+
