@@ -1,4 +1,4 @@
-package com.developer.dejavu;
+package com.developer.dejavu.display;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.developer.dejavu.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SecondActivity extends AppCompatActivity {
@@ -28,7 +29,6 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         logout_button = findViewById(R.id.button_log_out);
         mAuth = FirebaseAuth.getInstance();
-
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {

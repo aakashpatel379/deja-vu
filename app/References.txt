@@ -2,3 +2,7 @@ Registration Activity ProgressBar
 https://sourcey.com/articles/beautiful-android-login-and-signup-screens-with-material-design
 Progress bar style
 https://github.com/sourcey/materiallogindemo/blob/master/app/src/main/res/values/styles.xml
+https://www.flaticon.com/
+https://www.fontsquirrel.com/fonts/list/popular
+https://github.com/firebase/quickstart-android/blob/375c1ae5ec9000ee71b93cee409086e27d774bdb/auth/app/src/main/java/com/google/firebase/quickstart/auth/java/GoogleSignInActivity.java#L186
+https://stackoverflow.com/questions/27588965/how-to-use-custom-font-in-a-project-written-in-android-studio

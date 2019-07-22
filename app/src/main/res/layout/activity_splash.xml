@@ -6,7 +6,7 @@
     android:background="@drawable/authbackground2"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    tools:context=".display.SplashActivity">
 
     <ImageView
         android:id="@+id/iv_splash_logo"

@@ -7,4 +7,6 @@
     <color name="colorBlack">#000000</color>
     <color name="colorPink">#FF0266</color>
     <color name="colorYellow">#FDC007</color>
+    <color name="colorDashboardPrimaryDark">#BD2A63</color>
+    <color name="colorDashboardPrimary">#F79E6C</color>
 </resources>

@@ -1,11 +1,12 @@
-package com.developer.dejavu;
+package com.developer.dejavu.display;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.widget.ProgressBar;
+
+import com.developer.dejavu.R;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -46,15 +47,6 @@ public class SplashActivity extends AppCompatActivity {
                 }
             }
         },0,SPLASH_TIME_OUT);
-
-//        new Handler().postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent homeIntent = new Intent(SplashActivity.this, HomeActivity.class);
-//                finish();
-//                startActivity(homeIntent);
-//            }
-//        },SPLASH_TIME_OUT);
 
     }
 }

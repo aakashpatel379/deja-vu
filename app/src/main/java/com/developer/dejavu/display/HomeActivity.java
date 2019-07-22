@@ -1,33 +1,32 @@
-package com.developer.dejavu;
+package com.developer.dejavu.display;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.developer.dejavu.R;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     Button btnLogin, btnHelp, btnSound, btnPlay, btnQuit;
+    private static int VOL_TIME_OUT = 1700;
+    private static Boolean volumeDisabled=true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        btnHelp=(Button)findViewById(R.id.btn_help);
+        btnHelp=(Button)findViewById(R.id.btn_play_guide);
         btnLogin =(Button)findViewById(R.id.btn_login);
         btnPlay=(Button)findViewById(R.id.btn_play);
         btnQuit=findViewById(R.id.btn_quit);
@@ -37,6 +36,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btnLogin.setOnClickListener(this);
         btnQuit.setOnClickListener(this);
         btnHelp.setOnClickListener(this);
+
     }
 
 
@@ -65,7 +65,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId())
         {
-            case R.id.btn_help:
+            case R.id.btn_play_guide:
                 help();
                 break;
             case R.id.btn_login:
@@ -85,10 +85,10 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void help() {
-        openDialog();
+        playGuide();
     }
     private void sound() {
-
+        volumeDialog();
     }
     private void play() {
 
@@ -96,15 +96,37 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     private void quit() {
         onBackPressed();
     }
+
     private void login() {
         finish();
         startActivity(new Intent(HomeActivity.this, LoginActivity.class));
     }
-    public void openDialog(){
-        LayoutInflater inflater = (LayoutInflater)getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View v = inflater.inflate(R.layout.layout_help_popup, null);
 
-
+    public void volumeDialog()
+    {
+        View volView = HomeActivity.this.getLayoutInflater().inflate(R.layout.layout_volume, null);
+        final Dialog volDialog =new Dialog(HomeActivity.this);
+        volDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        volDialog.show();
+        volDialog.setCanceledOnTouchOutside(false);
+        volDialog.setContentView(volView);
+        ImageView ivVolumeOff =(ImageView) volView.findViewById(R.id.iv_volume_off);
+        ImageView ivVolumeOn = (ImageView)volView.findViewById(R.id.iv_volume_on);
+        if(volumeDisabled)
+        {
+            ivVolumeOff.setVisibility(View.INVISIBLE);
+            ivVolumeOn.setVisibility(View.VISIBLE);
+            volumeDisabled=false;
+        }
+        else
+        {
+            ivVolumeOff.setVisibility(View.VISIBLE);
+            ivVolumeOn.setVisibility(View.INVISIBLE);
+            volumeDisabled=true;
+        }
+        createDelay(volDialog);
+    }
+    public void playGuide(){
         View dialogView = HomeActivity.this.getLayoutInflater().inflate(R.layout.layout_help_popup, null);
         final Dialog mainDialog =new Dialog(HomeActivity.this);
         mainDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
@@ -129,8 +151,16 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+    }
 
-
+    public void createDelay(final Dialog volDialog)
+    {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                volDialog.dismiss();
+            }
+        },VOL_TIME_OUT);
     }
 
 }

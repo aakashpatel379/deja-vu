@@ -1,4 +1,4 @@
-package com.developer.dejavu;
+package com.developer.dejavu.display;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.developer.dejavu.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,7 +21,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
-//https://github.com/firebase/quickstart-android/blob/375c1ae5ec9000ee71b93cee409086e27d774bdb/auth/app/src/main/java/com/google/firebase/quickstart/auth/java/GoogleSignInActivity.java#L186
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
 
     private static final String TAG ="RegisterActivity";
@@ -61,7 +61,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btnRegister = findViewById(R.id.btn_register);
         mAuth = FirebaseAuth.getInstance();
         btnRegister.setOnClickListener(this);
-
     }
 
     private void registerUser() {
@@ -95,8 +94,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
 
         btnRegister.setEnabled(false);
-        final ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this,
-                R.style.AppTheme_Dark_Dialog);
+        final ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this, R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Creating Account...");
         progressDialog.show();
@@ -169,7 +167,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void redirectToLoginActivity() {
-
         startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 

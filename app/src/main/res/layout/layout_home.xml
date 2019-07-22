@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
+    tools:context=".display.HomeActivity">
 
 
     <ImageView
@@ -46,7 +46,7 @@
 
 
     <Button
-        android:id="@+id/btn_help"
+        android:id="@+id/btn_play_guide"
         android:layout_width="225dp"
         android:drawableLeft="@drawable/icon_satisfied"
         android:drawableRight="@drawable/icon_help"
@@ -54,7 +54,7 @@
         android:background="#11000000"
         android:layout_height="30dp"
         android:layout_below="@+id/btn_login"
-        android:text="HELP"
+        android:text="HOW TO PLAY"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
         />
@@ -67,7 +67,7 @@
         android:textColor="#ffffff"
         android:background="#11000000"
         android:layout_height="30dp"
-        android:layout_below="@+id/btn_help"
+        android:layout_below="@+id/btn_play_guide"
         android:text="SOUND"
         android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
