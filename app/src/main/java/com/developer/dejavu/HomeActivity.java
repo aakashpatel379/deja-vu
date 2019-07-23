@@ -24,11 +24,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         btn = (Button) findViewById(R.id.playGame);
         sound = (Button) findViewById(R.id.volume);
 
-
-
-
         sound.setOnClickListener(this);
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
