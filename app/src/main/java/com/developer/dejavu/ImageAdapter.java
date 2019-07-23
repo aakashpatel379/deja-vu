@@ -20,7 +20,7 @@ public class ImageAdapter extends BaseAdapter {
     }
     @Override
     public int getCount() {
-         return 26;
+         return 28;
     }
 
     @Override
@@ -41,16 +41,12 @@ public class ImageAdapter extends BaseAdapter {
             imageView = new ImageView(this.context);
             //LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(120, 120);
             //imageView.setLayoutParams(layoutParams);
-            imageView.setLayoutParams(new GridView.LayoutParams(200,300));
+            imageView.setLayoutParams(new GridView.LayoutParams(200,270));
             imageView.setScaleType(ImageView.ScaleType.FIT_XY);
         }
         else imageView = (ImageView) convertView;
         imageView.setImageResource(R.drawable.back);
         return imageView;
     }
-
-
-
-
 
 }
