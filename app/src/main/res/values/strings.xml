@@ -2,6 +2,7 @@
     <string name="app_name">Deja Vu</string>
     <string name="leaderboard_name">Game Leaderboard</string>
     <string name="google_status_fmt"></string>
+    <string name="google_client_id">808106934129-53qft8hm7j3utlasrvc808105an63dee.apps.googleusercontent.com</string>
     <string name="firebase_status_fmt"></string>
     <string name="help_text">
         Hello (Hello) allow me to introduce myself (myself)\n

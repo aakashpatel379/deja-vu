@@ -36,7 +36,7 @@
         android:layout_height="140dp"
         android:layout_marginTop="240dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/register_ico" />
+        android:src="@drawable/register_ico" />
 
     <TextView
         android:id="@+id/tv_displayName"
@@ -64,6 +64,16 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:textColor="@color/colorBlack"
+        />
+    <ImageView
+        android:id="@+id/iv_check_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/et_disp_name"
+        android:layout_marginTop="40dp"
+        android:paddingStart="6dp"
+        android:layout_below="@+id/iv_user_avatar"
+        android:src="@drawable/icon_correct"
         />
 
     <TextView
@@ -95,6 +105,17 @@
         android:textColor="@color/colorBlack"
         />
 
+    <ImageView
+        android:id="@+id/iv_check_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/btn_change_avatar"
+        android:layout_marginTop="40dp"
+        android:paddingStart="6dp"
+        android:layout_below="@+id/et_disp_name"
+        android:src="@drawable/icon_correct"
+        />
+
     <Button
         android:id="@+id/btn_save_profile"
         android:layout_width="150dp"
@@ -109,7 +130,18 @@
         android:textSize="16sp"
         android:textColor="@color/colorBlack"
         />
-
-
-
+    <Button
+        android:id="@+id/btn_back_player_screen"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:background="@drawable/login_button_shape"
+        android:text="BACK"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:layout_below="@+id/btn_save_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        />
 </RelativeLayout>

@@ -43,6 +43,8 @@ public class PlayerActivity extends AppCompatActivity  implements View.OnClickLi
         tvDashboardTitle=findViewById(R.id.tv_dashboard_title);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
+        Toast.makeText(PlayerActivity.this, "Player data"+user.getDisplayName()+user.getEmail(),Toast.LENGTH_LONG).show();
+
         btnAvatar=findViewById(R.id.btn_avatar);
         btnSinglePlayer=findViewById(R.id.btn_single_player);
         btnLeaderboard=findViewById(R.id.btn_leaderboard);
@@ -81,7 +83,8 @@ public class PlayerActivity extends AppCompatActivity  implements View.OnClickLi
         switch (v.getId())
         {
             case R.id.btn_avatar:
-
+                finish();
+                startActivity(new Intent(PlayerActivity.this,AvatarActivity.class));
                 break;
             case R.id.btn_single_player:
                 break;

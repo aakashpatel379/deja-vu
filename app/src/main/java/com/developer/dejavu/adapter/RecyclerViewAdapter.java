@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 
+import androidx.annotation.BinderThread;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,19 +16,28 @@ import com.developer.dejavu.R;
 
 import java.util.ArrayList;
 
+import static com.developer.dejavu.R.id.cv_item;
+
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     private Context mContext;
-    private ArrayList<Integer> imageItemList = new ArrayList<>();
-//    private MyViewHolder.AvatarListener avatarListener;
-    private static Boolean changed=false;
+    private ArrayList<Integer> imageItemList;
+    private int lastCheckedPosition=-1;
 
-    public RecyclerViewAdapter(Context mContext, ArrayList<Integer> imageItemList)//, MyViewHolder.AvatarListener avatarListener)
+    public int getLastCheckedPosition() {
+        return lastCheckedPosition;
+    }
+
+    public void setLastCheckedPosition(int lastCheckedPosition) {
+        this.lastCheckedPosition = lastCheckedPosition;
+    }
+
+    public RecyclerViewAdapter(Context mContext, ArrayList<Integer> imageItemList)
     {
         this.mContext = mContext;
         this.imageItemList = imageItemList;
-//        this.avatarListener = avatarListener;
     }
+
 
     @NonNull
     @Override
@@ -36,20 +46,32 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         View view;
         LayoutInflater inflater = LayoutInflater.from(mContext);
         view = inflater.inflate(R.layout.item,parent,false);
-        return new MyViewHolder(view);  //, avatarListener);
+        return new MyViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, final int position) {
         Resources resources = mContext.getResources();
         final int resourceId = resources.getIdentifier("item"+imageItemList.get(position), "drawable",
                 mContext.getPackageName());
        myViewHolder.cardViewItem.setBackground(mContext.getResources().getDrawable(resourceId));
 
-       if(changed)
-       {
-           myViewHolder.radioBtnItem.setChecked(false);
-       }
+        myViewHolder.radioBtnItem.setChecked(position==lastCheckedPosition);
+        myViewHolder.radioBtnItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(position == lastCheckedPosition)
+                {
+                    myViewHolder.radioBtnItem.setChecked(false);
+                    lastCheckedPosition=-1;
+                }
+                else
+                {
+                    lastCheckedPosition=position;
+                    notifyDataSetChanged();
+                }
+            }
+        });
 
     }
 
@@ -58,42 +80,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return imageItemList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder //implements View.OnClickListener
+    public static class MyViewHolder extends RecyclerView.ViewHolder
     {
         CardView cardViewItem;
         RadioButton radioBtnItem;
-//        AvatarListener avatarListener;
-
-        public MyViewHolder(View itemView)    ///, AvatarListener avatarListener)
+        public MyViewHolder(View itemView)
         {
             super(itemView);
-            cardViewItem = (CardView) itemView.findViewById(R.id.cv_item);
+            cardViewItem = (CardView) itemView.findViewById(cv_item);
             radioBtnItem = (RadioButton) itemView.findViewById(R.id.rb_image_item);
-//            this.avatarListener =avatarListener;
-//            radioBtnItem.setOnClickListener(this);
         }
 
-//        @Override
-//        public void onClick(View v)
-//        {
-//            avatarListener.onItemChecked(getAdapterPosition());
-//            int changedIndex = getAdapterPosition();
-//
-//            CheckBox cb1=v.getRootView().findViewById(R.id.cb_image_item);
-//            cb1.setChecked(true);
-//            for(int pos =0; pos<16; pos++)
-//            {
-//                if(pos!=changedIndex)
-//                {
-//                    CheckBox cb=v.getRootView().findViewById(R.id.cb_image_item);
-//                    cb.setChecked(false);
-//                }
-//            }
-//        }
-
-//        public interface AvatarListener {
-//            void onItemChecked(int position);
-//        }
     }
 
 }
