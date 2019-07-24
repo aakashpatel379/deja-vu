@@ -12,19 +12,38 @@
         android:id="@+id/playGame"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="BEGIN"
+        android:text="Normal Mode"
         android:layout_marginTop="200dp"
         android:layout_centerHorizontal="true"
         />
+    <Button
+        android:id="@+id/playCpu"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Cpu Mode"
+        android:layout_marginTop="15dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/playGame"
+        />
+
+    <Button
+        android:id="@+id/loadSavedGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/playCpu"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Load Saved Game"
+        android:visibility="gone"/>
 
     <Button
         android:id="@+id/avatar"
-        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="Avatar"
-        android:layout_marginTop="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/loadSavedGame"
         android:layout_centerHorizontal="true"
-        />
+        android:text="Avatar" />
 
     <Button
         android:id="@+id/myAccount"
