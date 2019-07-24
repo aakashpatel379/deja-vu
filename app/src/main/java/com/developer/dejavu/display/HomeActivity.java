@@ -92,7 +92,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         volumeDialog();
     }
     private void play() {
-
+        Intent intent =new Intent(HomeActivity.this, CpuGameActivity.class);
+        intent.putExtra("mode", "cpu");
+        startActivity(intent);
     }
     private void quit() {
         onBackPressed();

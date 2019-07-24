@@ -139,7 +139,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
             Log.w(GTAG, "signInResult:failed code=" + e.getStatusCode());
-            Toast.makeText(LoginActivity.this,"Auth went wrong",Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this,"Auth went wrong!",Toast.LENGTH_LONG).show();
             updateUI(null);
         }
     }
@@ -171,6 +171,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void updateUI(FirebaseUser user) {
         finish();
+        if(user!=null)
         startActivity(new Intent(LoginActivity.this, PlayerActivity.class));
     }
 
@@ -223,7 +224,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             // If sign in fails, display a message to the user.
                             progressDialog.dismiss();
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginActivity.this, "Signing process failed. Try again!",
+                            Toast.makeText(LoginActivity.this, "Try again with a valid email and password!",
                                     Toast.LENGTH_SHORT).show();
                             btnLogin.setEnabled(true);
                         }

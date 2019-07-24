@@ -49,6 +49,7 @@ public class AvatarActivity extends AppCompatActivity
     private static final String TAG = "AvatarActivity";
     private DatabaseReference databaseReference;
     private GoogleSignInClient mGoogleSignInClient;
+
     User oldExistingUser =null;
     ArrayList<Integer> imageList;
 

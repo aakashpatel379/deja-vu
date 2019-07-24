@@ -8,9 +8,9 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.developer.dejavu.R;
+import com.developer.dejavu.util.SharedPrefHelper;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -45,7 +46,7 @@ public class PlayerActivity extends AppCompatActivity  implements View.OnClickLi
         FirebaseUser user = mAuth.getCurrentUser();
         btnAvatar=findViewById(R.id.btn_avatar);
         btnSinglePlayer=findViewById(R.id.btn_single_player);
-        btnLeaderboard=findViewById(R.id.btn_leaderboard);
+        btnLeaderboard=findViewById(R.id.btn_load_saved_game);
         btnSignOut=findViewById(R.id.btn_dashboard_signout);
         btnHelp=findViewById(R.id.btn_dashboard_help);
         btnTwoPlayer=findViewById(R.id.btn_two_player);
@@ -85,18 +86,38 @@ public class PlayerActivity extends AppCompatActivity  implements View.OnClickLi
                 startActivity(new Intent(PlayerActivity.this,AvatarActivity.class));
                 break;
             case R.id.btn_single_player:
+                Intent intent =new Intent(PlayerActivity.this, CpuGameActivity.class);
+                intent.putExtra("mode", "cpu");
+                startActivity(intent);
                 break;
             case R.id.btn_dashboard_help:
                 helpDialog();
                 break;
-            case R.id.btn_leaderboard:
-                Toast.makeText(PlayerActivity.this,"Not implemented yet!",Toast.LENGTH_SHORT).show();
+            case R.id.btn_load_saved_game:
+                loadSavedGame();
                 break;
             case R.id.btn_dashboard_signout:
                 mAuth.signOut();
                 googleSignOut();
                 break;
+            case R.id.btn_two_player:
+                startActivity(new Intent(PlayerActivity.this, CpuGameActivity.class));
+                break;
         }
+    }
+
+    private void loadSavedGame() {
+
+        SharedPrefHelper sharedPrefHelper = new SharedPrefHelper(getApplicationContext());
+
+        if (TextUtils.isEmpty(sharedPrefHelper.getString(CpuGameActivity.USER_GAME_DATA, ""))) {
+            Toast.makeText(getApplicationContext(),"You do not have any saved game. Please save and try again!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        Intent intent =new Intent(PlayerActivity.this, CpuGameActivity.class);
+        intent.putExtra("load_saved_game", true);
+        startActivity(intent);
     }
 
     private void googleSignOut() {
