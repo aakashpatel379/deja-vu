@@ -4,11 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Handler;
 import android.support.annotation.DrawableRes;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -16,20 +18,28 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.ArraySet;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.developer.dejavu.cpu.Cpu;
 import com.developer.dejavu.cpu.OnItemClickListener;
+import com.developer.dejavu.cpu.Player;
+import com.developer.dejavu.cpu.PlayerType;
 import com.developer.dejavu.gameplay.Card;
 import com.developer.dejavu.gameplay.CardDB;
 import com.developer.dejavu.gameplay.Game;
 import com.developer.dejavu.gameplay.GameView;
 import com.developer.dejavu.gameplay.PlayerMoveCallback;
+import com.developer.dejavu.gameplay.UserGameData;
+import com.developer.dejavu.util.PlayerGson;
+import com.developer.dejavu.util.SharedPrefHelper;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -49,6 +59,8 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
     int currentRound = 0;
     private PlayerMoveCallback playerMoveCallback;
     private Game game;
+    private SharedPrefHelper sharedPrefHelper;
+    static String USER_GAME_DATA = "user_game_data";
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private static int SHAKE_THRESHOLD = 3;
@@ -58,8 +70,25 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cpu_game);
+        sharedPrefHelper = new SharedPrefHelper(getApplicationContext());
 
         init();
+
+        if (getIntent().getBooleanExtra("load_saved_game", false)) {
+            final UserGameData userGameData = new PlayerGson().getPlayerGson().fromJson(sharedPrefHelper.getString(USER_GAME_DATA, ""), UserGameData.class);
+            if (userGameData != null) {
+                imageAdapter.setCards(userGameData.getCards());
+
+                gridView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        game.restoreGameData(userGameData.getGameData());
+                        gridView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    }
+                });
+            }
+        }
+
         game.start();
     }
 
@@ -315,7 +344,10 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
         }
     }
 
-
+    private void saveGame() {
+        sharedPrefHelper.putString(USER_GAME_DATA, new PlayerGson().getPlayerGson().toJson(new UserGameData(game.getGameData(), imageAdapter.getCards())));
+        super.onBackPressed();
+    }
 
     @Override
     public void onBackPressed() {
@@ -327,7 +359,7 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
             public void onClick(DialogInterface dialog, int which) {
                 game.stop();
                 dialog.dismiss();
-
+                saveGame();
             }
         });
         builder.setNegativeButton("Don't Save", new DialogInterface.OnClickListener() {
@@ -340,7 +372,6 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
         });
         builder.create().show();
     }
-
     public void createNewGame(){
         isAccelerometerTriggered = false;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -368,4 +399,5 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
         builder.create().show();
 
     }
+
 }

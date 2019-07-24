@@ -79,6 +79,25 @@ public class Game implements PlayerMoveCallback {
         turn(currentPlayer, 1);
     }
 
+    public void restoreGameData(GameData gameData) {
+        opponents = new Pair<>(gameData.getP1(), gameData.getP2());
+        currentPos = gameData.getCurrentPosition();
+
+        if (currentPos > -1) {
+            firstCardView = gameView.getCardView(currentPos);
+            gameView.flipCard(firstCardView, gameView.getCard(currentPos).getCardImage());
+        }
+        if (gameData.getP1().isPlaying()) {
+            currentPlayer = gameData.getP1();
+        } else {
+            currentPlayer = gameData.getP2();
+        }
+    }
+
+    public GameData getGameData() {
+        return new GameData(opponents.first, opponents.second, currentPos);
+    }
+
     public void stop() {
         if (handler != null)
             handler.removeCallbacks(cpuTurn);
