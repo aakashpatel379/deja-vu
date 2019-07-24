@@ -30,6 +30,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         progressBar = findViewById(R.id.progressbar_splash);
         progressBar.setProgress(0);
+        //Progressbar loading timer
         timer=new Timer();
         timer.schedule(new TimerTask() {
             @Override

@@ -1,21 +1,15 @@
 package com.developer.dejavu.adapter;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
-
-import androidx.annotation.BinderThread;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.developer.dejavu.R;
-
 import java.util.ArrayList;
-
 import static com.developer.dejavu.R.id.cv_item;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
@@ -37,7 +31,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         this.mContext = mContext;
         this.imageItemList = imageItemList;
     }
-
 
     @NonNull
     @Override
@@ -79,7 +72,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public int getItemCount() {
         return imageItemList.size();
     }
-
     public static class MyViewHolder extends RecyclerView.ViewHolder
     {
         CardView cardViewItem;

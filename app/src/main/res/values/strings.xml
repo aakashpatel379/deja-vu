@@ -5,20 +5,22 @@
     <string name="google_client_id">808106934129-53qft8hm7j3utlasrvc808105an63dee.apps.googleusercontent.com</string>
     <string name="firebase_status_fmt"></string>
     <string name="help_text">
-        Hello (Hello) allow me to introduce myself (myself)\n
-        My name is Shaaady\n
-        So nice to meet you (So nice to meet you)\n
-        It\'s been a long time (long time) sorry I\'ve been away so long (So long)\n
-        My name is Shaaady\n
-        I never meant to leave you (Never meant to leave you)\n
-        Yea\n
-        Hello (Hello) allow me to introduce myself (myself)\n
-        My name is Shaaady\n
-        So nice to meet you (So nice to meet you)\n
-        It\'s been a long time (long time) sorry I\'ve been away so long (So long)\n
-        My name is Shaaady\n
-        I never meant to leave you (Never meant to leave you)\n
-        Yea\n
+        1. Déjà vu is a memory card game designed for two people, although single player modes are available.\n
+        \n
+        2. From a standard 52-card deck, 26 cards of 2 type cards each are dealt, all face down.\n
+        \n
+        3. Players take turns flipping pairs of cards over.\n
+        \n
+        4. On each turn, the player will first turn one card over, then a second.\n
+        \n
+        5. If the two cards match, the player scores 10 points, the two cards are removed from the game, and the player gets another turn.\n
+        \n
+        6. If they do not match, the cards are turned back over and turn shifts to other player.\n
+        \n
+        7. The objective is to match more pairs of cards than the opposing player. (One point is scored for each matched pair, and the player with the highest score after all cards have been matched wins)\n
+        \n
+        8. When cards are turned over, it is important to remember where they are for when the matching card is turned up later in the game.\n
+
 </string>
 </resources>
 

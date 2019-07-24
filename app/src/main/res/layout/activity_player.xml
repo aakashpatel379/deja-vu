@@ -61,7 +61,7 @@
         android:layout_below="@+id/btn_single_player"
         android:layout_marginTop="40dp"
         android:layout_centerHorizontal="true"
-        android:text="Leaderboard"
+        android:text="LOAD SAVED GAME"
         android:background="#11000000"
         />
 

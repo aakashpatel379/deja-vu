@@ -107,7 +107,7 @@ public class AvatarActivity extends AppCompatActivity
 
         // Configure Google Sign In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken("808106934129-53qft8hm7j3utlasrvc808105an63dee.apps.googleusercontent.com")
+                .requestIdToken(getString(R.string.google_client_id))
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);

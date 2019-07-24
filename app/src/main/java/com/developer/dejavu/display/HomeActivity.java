@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.developer.dejavu.R;
+import com.developer.dejavu.service.SoundService;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -98,7 +99,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void login() {
-        finish();
+
         startActivity(new Intent(HomeActivity.this, LoginActivity.class));
     }
 
@@ -116,12 +117,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         {
             ivVolumeOff.setVisibility(View.INVISIBLE);
             ivVolumeOn.setVisibility(View.VISIBLE);
+            startService(new Intent(this, SoundService.class));
             volumeDisabled=false;
         }
         else
         {
             ivVolumeOff.setVisibility(View.VISIBLE);
             ivVolumeOn.setVisibility(View.INVISIBLE);
+            stopService(new Intent(this, SoundService.class));
             volumeDisabled=true;
         }
         createDelay(volDialog);
