@@ -3,6 +3,7 @@ package com.developer.dejavu;
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Rect;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -51,6 +52,7 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private static int SHAKE_THRESHOLD = 3;
+    private boolean isAccelerometerTriggered = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -280,8 +282,8 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
 
         float acceleration = (float) Math.sqrt(x*x + y*y + z*z) - SensorManager.GRAVITY_EARTH;
 
-        if (acceleration > SHAKE_THRESHOLD) {
-            onBackPressed();
+        if (acceleration > SHAKE_THRESHOLD && isAccelerometerTriggered) {
+            createNewGame();
         }
     }
 
@@ -337,5 +339,33 @@ public class CpuGame extends AppCompatActivity implements OnItemClickListener, G
             }
         });
         builder.create().show();
+    }
+
+    public void createNewGame(){
+        isAccelerometerTriggered = false;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Restart Game");
+        builder.setMessage("Game is not finished.\nRestart Game?");
+
+        builder.setPositiveButton("New Game", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                Intent intent =new Intent(CpuGame.this, CpuGame.class);
+                finish();
+                startActivity(intent);
+
+            }
+
+        });
+        builder.setNegativeButton("Resume Game", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                isAccelerometerTriggered = true;
+                dialog.dismiss();
+            }
+        });
+        builder.create().show();
+
     }
 }
