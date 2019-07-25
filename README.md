@@ -92,16 +92,34 @@ If we were to continue we would like to complete the two player game play in dif
 
 ## Code Examples
 
-You will encounter roadblocks and problems while developing your project.
-Share 2-3 'problems' that your team encountered.
-Write a few sentences that describe your solution and provide a code snippet/block
-that shows your solution. Example:
-
-**Problem 1: We needed to detect shake events**
-
-The shake effect triggers the accelerometer  which was supposed to shuffle cards but as we had difficulty implementing this in smarter CPU mode we kept the accelerometer to restrat the game.
 ```
 **Problem 1: We were facing issues with Grid view in Game Logic design. It was due to the complex logic to be handled in between the turns. We even tried with performing item click (with use of performItemClick method), but struggled to manage the item view. So finally we decided to move ahead with the recycler view since we already had implementation experience for that.
+
+    @Override
+    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, final int position) {
+        Resources resources = mContext.getResources();
+        final int resourceId = resources.getIdentifier("item"+imageItemList.get(position), "drawable",
+                mContext.getPackageName());
+       myViewHolder.cardViewItem.setBackground(mContext.getResources().getDrawable(resourceId));
+
+        myViewHolder.radioBtnItem.setChecked(position==lastCheckedPosition);
+        myViewHolder.radioBtnItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(position == lastCheckedPosition)
+                {
+                    myViewHolder.radioBtnItem.setChecked(false);
+                    lastCheckedPosition=-1;
+                }
+                else
+                {
+                    lastCheckedPosition=position;
+                    notifyDataSetChanged();
+                }
+            }
+        });
+
+    }    
 ```
 ```
 **Problem 2: We need to implement the maginifcation inside the game and stil choose crads**
@@ -142,13 +160,13 @@ Site map:-
 Wireframes:- 
 
 <img src="/images/wireframe1.png" alt="drawing" width="200"/>
-Wireframe 1
+**Figure 1** - Wireframe 1
 
 <img src="/images/wireframe2.png" alt="drawing" width="200"/>
-Wireframe 2
+**Figure 2** - Wireframe 2
 
 <img src="/images/wireframe3.png" alt="drawing" width="200"/>
-Wireframe 3
+**Figure 3** - Wireframe 3
 
 ## Prototypes
 
@@ -158,62 +176,62 @@ None
 
 Screenshots of all the screens
 
-<img src="/images/Screen0.jpg" alt="drawing" width="200"/>
-App Icon
+<img src="/images/Screen0.jpeg" alt="drawing" width="200"/>
+**Figure 4** - App Icon
 
 <img src="/images/Screen1.png" alt="drawing" width="200"/>
-Splash Screen
+**Figure 5** - Splash Screen
 
 <img src="/images/Screen2.png" alt="drawing" width="200"/>
-Home Screen
+**Figure 6** - Home Screen
 
 <img src="/images/Screen3.png" alt="drawing" width="200"/>
-Sound On
+**Figure 7** - Sound On
 
 <img src="/images/Screen4.png" alt="drawing" width="200"/>
-Sound Off
+**Figure 8** - Sound Off
 
 <img src="/images/Screen5.png" alt="drawing" width="200"/>
-Quit game
+**Figure 9** - Quit game
 
 <img src="/images/Screen6.png" alt="drawing" width="200"/>
-Login/Sign Up
+**Figure 10** - Login/Sign Up
 
 <img src="/images/Screen7.png" alt="drawing" width="200"/>
-Google User Account
+**Figure 12** - Google User Account
 
 <img src="/images/Screen8.png" alt="drawing" width="200"/>
-Registration Page
+**Figure 13** - Registration Page
 
 <img src="/images/Screen9.png" alt="drawing" width="200"/>
-Sign Up page
+**Figure 14** - Sign Up page
 
 <img src="/images/Screen10.png" alt="drawing" width="200"/>
-Game dashboard
+**Figure 15** - Game dashboard
 
 <img src="/images/Screen11.png" alt="drawing" width="200"/>
-Help Screen
+**Figure 16** - Help Screen
 
 <img src="/images/Screen12.png" alt="drawing" width="200"/>
-Play game screen 1
+**Figure 17** - Play game screen 1
 
 <img src="/images/Screen13.png" alt="drawing" width="200"/>
-Play game screen 2
+**Figure 18** - Play game screen 2
 
 <img src="/images/Screen14.png" alt="drawing" width="200"/>
-Maginification of the game screen
+**Figure 19** - Maginification of the game screen
 
 <img src="/images/Screen15.png" alt="drawing" width="200"/>
-Exit Game(Save dialog)
+**Figure 20** - Exit Game(Save dialog)
 
 <img src="/images/Screen16.png" alt="drawing" width="200"/>
-Restoring saved game
+**Figure 21** - Restoring saved game
 
 <img src="/images/Screen17.png" alt="drawing" width="200"/>
-Score screen
+**Figure 22** - Score screen
 
 <img src="/images/Screen18.png" alt="drawing" width="200"/>
-Winning dialog
+**Figure 23** - Winning dialog
 
 ## Future Work
 
