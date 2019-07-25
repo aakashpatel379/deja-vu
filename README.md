@@ -151,87 +151,108 @@ We have followed structral way to keep our files in place. Our fundamental purpo
 
 ## High-level Organization
 
-Site map:-
+**Site map:-**
 
-<img src="/images/SiteMap_dejaVu.png" alt="drawing" width="200"/>
+![Flowers](/images/SiteMap_dejaVu.png)
+
 
 ## Layout
 
-Wireframes:- 
+### Wireframes:-
 
-<img src="/images/wireframe1.png" alt="drawing" width="200"/>
-**Figure 1** - Wireframe 1
+**Wireframe 1**  
 
-<img src="/images/wireframe2.png" alt="drawing" width="200"/>
-**Figure 2** - Wireframe 2
+![](/images/wireframe1.png)
 
-<img src="/images/wireframe3.png" alt="drawing" width="200"/>
-**Figure 3** - Wireframe 3
+**Wireframe 2**  
 
-## Prototypes
+![](/images/wireframe2.png)
+
+**Wireframe 3**  
+
+![](/images/wireframe3.png)
+
+
+### Prototypes
 
 None
 
-## Implementation
+### Implementation
 
-Screenshots of all the screens
+**Screenshots of all the screens**
+
+**4. App Icon**
 
 <img src="/images/Screen0.jpeg" alt="drawing" width="200"/>
-**Figure 4** - App Icon
+
+**5. Splash Screen**
 
 <img src="/images/Screen1.png" alt="drawing" width="200"/>
-**Figure 5** - Splash Screen
+
+**6. Home Screen**
 
 <img src="/images/Screen2.png" alt="drawing" width="200"/>
-**Figure 6** - Home Screen
+
+**7. Sound On**
 
 <img src="/images/Screen3.png" alt="drawing" width="200"/>
-**Figure 7** - Sound On
+
+**8. Sound Off**
 
 <img src="/images/Screen4.png" alt="drawing" width="200"/>
-**Figure 8** - Sound Off
+
+**9. Quit Game**
 
 <img src="/images/Screen5.png" alt="drawing" width="200"/>
-**Figure 9** - Quit game
+
+**10. Login/Sign In Screen**
 
 <img src="/images/Screen6.png" alt="drawing" width="200"/>
-**Figure 10** - Login/Sign Up
+
+**11. Google User Sign In**
 
 <img src="/images/Screen7.png" alt="drawing" width="200"/>
-**Figure 12** - Google User Account
+
+**13. Registration Screen**
 
 <img src="/images/Screen8.png" alt="drawing" width="200"/>
-**Figure 13** - Registration Page
 
-<img src="/images/Screen9.png" alt="drawing" width="200"/>
-**Figure 14** - Sign Up page
+**14. Game dashboard**  
 
 <img src="/images/Screen10.png" alt="drawing" width="200"/>
-**Figure 15** - Game dashboard
+
+**15. Help Screen** 
 
 <img src="/images/Screen11.png" alt="drawing" width="200"/>
-**Figure 16** - Help Screen
 
-<img src="/images/Screen12.png" alt="drawing" width="200"/>
-**Figure 17** - Play game screen 1
+**16. Play game screen 1** - 
 
-<img src="/images/Screen13.png" alt="drawing" width="200"/>
-**Figure 18** - Play game screen 2
+<img src="/images/Screen12.png" alt="drawing" width="425"/>
 
-<img src="/images/Screen14.png" alt="drawing" width="200"/>
-**Figure 19** - Maginification of the game screen
+**17. Play game screen 2** 
 
-<img src="/images/Screen15.png" alt="drawing" width="200"/>
-**Figure 20** - Exit Game(Save dialog)
+<img src="/images/Screen13.png" alt="drawing" width="425"/>
 
-<img src="/images/Screen16.png" alt="drawing" width="200"/>
-**Figure 21** - Restoring saved game
+**18. Magnification of the game screen**
 
-<img src="/images/Screen17.png" alt="drawing" width="200"/>
-**Figure 22** - Score screen
+<img src="/images/Screen14.png" alt="drawing" width="425"/>
 
-<img src="/images/Screen18.png" alt="drawing" width="200"/>
-**Figure 23** - Winning dialog
+**19. Exit Game (Save Dialog)**
+
+<img src="/images/Screen15.png" alt="drawing" width="425"/>
+
+**20. Restart Game (On Shake)** 
+
+<img src="/images/Screen16.png" alt="drawing" width="425"/>
+
+**21. Score screen**
+
+<img src="/images/Screen17.png" alt="drawing" width="425"/>
+
+**22. Winning dialog** 
+
+<img src="/images/Screen18.png" alt="drawing" width="425"/>
+
 
 ## Future Work
 
