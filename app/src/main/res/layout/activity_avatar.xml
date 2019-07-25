@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/authbackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".display.AvatarActivity">
+
+    <TextView
+        android:id="@+id/tv_player_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="17.5sp"
+        android:text="WELCOME"
+        android:textColor="@color/colorWhite"
+        />
+
+    <TextView
+        android:id="@+id/tv_player_fullname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/tv_player_welcome"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:text="FirstName LastName"
+        android:textColor="@color/colorWhite"
+        />
+
+    <ImageView
+        android:id="@+id/iv_user_avatar"
+        android:layout_width="120dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="240dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/register_ico" />
+
+    <TextView
+        android:id="@+id/tv_displayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_user_avatar"
+        android:layout_alignStart="@+id/et_disp_name"
+        android:layout_alignLeft="@+id/et_disp_name"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="16dp"
+        android:text="Display Name:"
+        android:textColor="@color/colorYellow"
+        android:textSize="18sp" />
+
+
+    <EditText
+        android:id="@+id/et_disp_name"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:text="Player 1"
+        android:background="@color/colorWhite"
+        android:textStyle="italic"
+        android:layout_below="@+id/iv_user_avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/colorBlack"
+        />
+    <ImageView
+        android:id="@+id/iv_check_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/et_disp_name"
+        android:layout_marginTop="40dp"
+        android:paddingStart="6dp"
+        android:layout_below="@+id/iv_user_avatar"
+        android:src="@drawable/icon_correct"
+        />
+
+    <TextView
+        android:id="@+id/tv_change_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_user_avatar"
+        android:layout_alignStart="@+id/et_disp_name"
+        android:layout_alignLeft="@+id/et_disp_name"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="79dp"
+        android:text="Change Avatar:"
+        android:textColor="@color/colorYellow"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_change_avatar"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:background="@color/colorWhite"
+        android:text="browse.."
+        android:textAlignment="textStart"
+        android:textStyle="italic"
+        android:layout_below="@+id/et_disp_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        />
+
+    <ImageView
+        android:id="@+id/iv_check_avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/btn_change_avatar"
+        android:layout_marginTop="40dp"
+        android:paddingStart="6dp"
+        android:layout_below="@+id/et_disp_name"
+        android:src="@drawable/icon_correct"
+        />
+
+    <Button
+        android:id="@+id/btn_save_profile"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:background="@drawable/login_button_shape"
+        android:text="SAVE"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:layout_below="@+id/btn_change_avatar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        />
+    <Button
+        android:id="@+id/btn_back_player_screen"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:background="@drawable/login_button_shape"
+        android:text="BACK"
+        android:textAlignment="center"
+        android:textStyle="italic"
+        android:layout_below="@+id/btn_save_profile"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:textColor="@color/colorBlack"
+        />
+</RelativeLayout>

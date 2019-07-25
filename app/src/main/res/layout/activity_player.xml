@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/player_menu"
+    tools:context=".display.PlayerActivity">
+
+    <TextView
+        android:id="@+id/tv_dashboard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:textSize="24sp"
+        android:textColor="@color/colorWhite"
+        android:text="Game Dashboard"
+        />
+
+    <ImageView
+        android:id="@+id/iv_dashboard_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv_dashboard_title"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/game_dashboard_ico"
+        android:layout_marginTop="40dp"
+        />
+
+    <Button
+        android:id="@+id/btn_avatar"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/iv_dashboard_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:background="#11000000"
+        android:text="Avatar"
+        android:textColor="@color/colorDashboardPrimary"
+        />
+
+    <Button
+        android:id="@+id/btn_single_player"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_below="@+id/btn_avatar"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/colorWhite"
+        android:layout_centerHorizontal="true"
+        android:text="Single Player"
+        android:background="#11000000"
+        />
+
+
+    <Button
+        android:id="@+id/btn_load_saved_game"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:textColor="@color/colorDashboardPrimary"
+        android:layout_below="@+id/btn_single_player"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:text="LOAD SAVED GAME"
+        android:background="#11000000"
+        />
+
+
+    <Button
+        android:id="@+id/btn_two_player"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/btn_load_saved_game"
+        android:layout_centerHorizontal="true"
+        android:text="Two Player"
+        android:background="#11000000"
+        />
+
+    <Button
+        android:id="@+id/btn_dashboard_help"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:textColor="@color/colorDashboardPrimary"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/btn_two_player"
+        android:layout_centerHorizontal="true"
+        android:text="Help"
+        android:background="#11000000"
+        />
+
+    <Button
+        android:id="@+id/btn_dashboard_signout"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/btn_dashboard_help"
+        android:layout_centerHorizontal="true"
+        android:text="Sign Out"
+        android:background="#11000000"
+        />
+
+</RelativeLayout>

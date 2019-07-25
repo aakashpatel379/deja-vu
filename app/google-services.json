@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "808106934129",
+    "firebase_url": "https://deja-vu-994c1.firebaseio.com",
+    "project_id": "deja-vu-994c1",
+    "storage_bucket": "deja-vu-994c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808106934129:android:283842673f6ef47f",
+        "android_client_info": {
+          "package_name": "com.developer.dejavu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808106934129-jurusbq35d54hj8quh0c0v40t9suu9mj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.developer.dejavu",
+            "certificate_hash": "b98e0a28ceabf55ab5d5aff9bf82f099b7103a9b"
+          }
+        },
+        {
+          "client_id": "808106934129-53qft8hm7j3utlasrvc808105an63dee.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAP1nSJVkUDuc1wAFOsU-WZxDQFJNYbLNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808106934129-53qft8hm7j3utlasrvc808105an63dee.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
